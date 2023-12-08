@@ -1,18 +1,33 @@
 package ru.kozarez.automated_workstation.entities;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import ru.kozarez.automated_workstation.entities.enums.LoanStatus;
+import lombok.NoArgsConstructor;
+import ru.kozarez.automated_workstation.entities.enums.LoanApplicationStatus;
 
+@Entity
+@Table(name = "loan_application")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class LoanApplicationEntity {
-    private ClientEntity clientEntity;
-    private int desiredLoan;
-    private LoanStatus loanStatus = LoanStatus.MOT_CONSIDERED;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-    public LoanApplicationEntity(ClientEntity clientEntity, int desiredLoan){
-        this.clientEntity = clientEntity;
-        this.desiredLoan = desiredLoan;
-    }
+    @OneToOne(mappedBy = "loanApplication", cascade = CascadeType.ALL)
+    private LoanContractEntity loanContract;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private ClientEntity client;
+
+    @Column(name = "desired_loan")
+    private int desiredLoan;
+
+    @Column(name = "loan_status")
+    @Enumerated(EnumType.STRING)
+    private LoanApplicationStatus loanApplicationStatus = LoanApplicationStatus.MOT_CONSIDERED;
 }

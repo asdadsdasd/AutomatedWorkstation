@@ -17,14 +17,13 @@ public class LoanController {
 
     @GetMapping("/")
     public String index(Model model){
-        model.addAttribute("loans", loanService.getLoans());
+        //model.addAttribute("loans", loanService.getLoans());
         model.addAttribute("statuses", MartialStatus.values());
         return "index";
     }
 
     @PostMapping("/loan/create")
     public String createLoanApplicationForm(LoanApplicationForm loanApplicationForm){
-        loanService.createLoan(loanApplicationForm);
         return "redirect:/";
     }
 }
