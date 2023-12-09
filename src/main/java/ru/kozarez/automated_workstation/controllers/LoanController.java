@@ -24,6 +24,7 @@ public class LoanController {
 
     @PostMapping("/loan/create")
     public String createLoanApplicationForm(LoanApplicationForm loanApplicationForm){
+        loanService.createLoanApplication(loanApplicationForm);
         return "redirect:/";
     }
 }

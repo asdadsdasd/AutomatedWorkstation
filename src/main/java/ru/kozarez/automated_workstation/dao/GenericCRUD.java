@@ -3,9 +3,9 @@ package ru.kozarez.automated_workstation.dao;
 import java.util.List;
 
 public interface GenericCRUD <T, ID>{
-    T findById(ID id);
+    T getById(ID id);
 
-    List<T> findAll();
+    List<T> getAll();
 
     void create(T entity);
 

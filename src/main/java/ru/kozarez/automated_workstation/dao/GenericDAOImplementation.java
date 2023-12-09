@@ -14,30 +14,23 @@ public abstract class GenericDAOImplementation<T, IDType> implements GenericCRUD
     @Autowired
     private SessionFactory sessionFactory;
 
-    private final Class<T> entityClass;
-
-    public GenericDAOImplementation() {
-        Type type = getClass().getGenericSuperclass();
-        ParameterizedType pt = (ParameterizedType) type;
-        this.entityClass = (Class<T>) pt.getActualTypeArguments()[0];
-    }
-
     protected Session getSession(){
-        return sessionFactory.getCurrentSession();
+        try {
+            return sessionFactory.getCurrentSession();
+        }catch (Exception e){
+            String err = e.getMessage();
+            System.out.println("message: " + err);
+        }
+        return null;
     }
     @Override
-    public T findById(IDType id) {
-        return getSession().get(entityClass, id);
-    }
+    abstract public T getById(IDType id);
 
     @Override
-    public List<T> findAll() {
-        return getSession().createQuery("from " + entityClass.getSimpleName(), entityClass).list();
-    }
-
+    abstract public List<T> getAll();
     @Override
     public void create(T entity) {
-        getSession().persist(entity);
+        getSession().save(entity);
     }
 
     @Override

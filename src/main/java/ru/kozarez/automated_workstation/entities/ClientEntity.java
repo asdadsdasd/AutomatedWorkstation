@@ -1,11 +1,13 @@
 package ru.kozarez.automated_workstation.entities;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.kozarez.automated_workstation.entities.enums.MartialStatus;
 
+
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 

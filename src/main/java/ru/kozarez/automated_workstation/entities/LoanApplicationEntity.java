@@ -1,10 +1,12 @@
 package ru.kozarez.automated_workstation.entities;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.kozarez.automated_workstation.entities.enums.LoanApplicationStatus;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "loan_application")

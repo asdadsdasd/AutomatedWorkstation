@@ -6,11 +6,11 @@
 </head>
 <body>
 <h1>LoanApplication</h1><hr>
-<#list loans as loan>
+<#--<#list loans as loan>
     <div>
         <p><b>${loan.clientEntity.secondName} ${loan.clientEntity.firstName} | ${loan.desiredLoan}</a> </b></p>
     </div>
-</#list>
+</#list>-->
 <h3>Создать заявку</h3>
 <form action="/loan/create" method="post">
     <H4>Данные клиента</H4>
