@@ -17,6 +17,5 @@ public class EmploymentDAOImplementation extends GenericDAOImplementation<Employ
     @Override
     public List<EmploymentEntity> getAll() {
         return getSession().createQuery("from EmploymentEntity").list();
-                //(EmploymentEntity, "FROM EmploymentEntity" + ).list();
     }
 }

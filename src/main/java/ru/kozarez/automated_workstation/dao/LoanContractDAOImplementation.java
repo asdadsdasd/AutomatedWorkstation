@@ -1,6 +1,7 @@
 package ru.kozarez.automated_workstation.dao;
 
 import org.springframework.stereotype.Repository;
+import ru.kozarez.automated_workstation.entities.ClientEntity;
 import ru.kozarez.automated_workstation.entities.LoanContractEntity;
 
 import java.util.List;

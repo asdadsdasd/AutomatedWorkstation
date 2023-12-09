@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import ru.kozarez.automated_workstation.entities.ClientEntity;
 import ru.kozarez.automated_workstation.entities.EmploymentEntity;
 import ru.kozarez.automated_workstation.entities.LoanApplicationEntity;
 import ru.kozarez.automated_workstation.entities.LoanContractEntity;
