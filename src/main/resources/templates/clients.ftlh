@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Clients</title>
+    <title>Клиенты</title>
 </head>
 <body class="bg-light">
 <#include "parts/header.ftlh">

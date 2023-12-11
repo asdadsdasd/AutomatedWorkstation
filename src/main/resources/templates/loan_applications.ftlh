@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Clients</title>
+    <title>Заявки на кредит</title>
 </head>
 <body class="bg-light">
 <#include "parts/header.ftlh">
@@ -15,7 +15,7 @@
             <select name="loanApplicationStatus" class="form-select col-3" required>
                 <#list statuses as status>
                     <#if status == 'MOT_CONSIDERED'>
-                        <option value="${status}">Рассматрицвается</option>
+                        <option value="${status}">Рассматривается</option>
                     <#elseif status == 'APPROVED'>
                         <option value="${status}">Одобрено</option>
                     <#elseif status == 'NOT_APPROVED'>
@@ -48,7 +48,7 @@
                             </td>
                             <td>${loanApplication.desiredLoan}</td>
                             <td>
-                                <#if loanApplication.loanApplicationStatus == "MOT_CONSIDERED">
+                                <#if loanApplication.loanApplicationStatus == "NOT_CONSIDERED">
                                     Рассматривается
                                 <#elseif loanApplication.loanApplicationStatus == "APPROVED">
                                     Одобрено
@@ -57,7 +57,7 @@
                                 </#if>
                             </td>
                             <td>
-                                <a href="/loanApplication/${loanApplication.id}">Подробнее</a>
+                                <a href="/loan-applications/${loanApplication.id}">Подробнее</a>
                             </td>
                         </tr>
                     </#list>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Clients</title>
+    <title>Данные о кредитном договоре</title>
 </head>
 <body class="bg-light">
 <#include "parts/header.ftlh">
@@ -15,9 +15,9 @@
             <select name="loanContractStatus" class="form-select col-3" required>
                 <#list statuses as status>
                     <#if status == 'SIGNED'>
-                        <option value="${status}">Подписано</option>
+                        <option value="${status}">Подписан</option>
                     <#elseif status == 'NOT_SIGNED'>
-                        <option value="${status}">Не подписано</option>
+                        <option value="${status}">Не подписан</option>
                     </#if>
                 </#list>
             </select>
@@ -30,32 +30,34 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">ФИО</th>
-                        <th scope="col">Сумма кредита</th>
+                        <th scope="col">Ожидаемая сумма кредита</th>
+                        <th scope="col">Одобренная сумма кредита</th>
+                        <th scope="col">Одобренное время на выплату</th>
                         <th scope="col">Статус одобрения</th>
                         <th scope="col">Действие</th>
                     </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                    <#list loanApplications as loanApplication>
+                    <#list loanContracts as loanContract>
                         <tr>
-                            <th scope="row">${loanApplication.id}</th>
+                            <th scope="row">${loanContract.id}</th>
                             <td>
-                                <a href="/clients/${loanApplication.client.id}">
-                                    ${loanApplication.client.secondName} ${loanApplication.client.firstName} ${loanApplication.client.patronymic}
+                                <a href="/clients/${loanContract.loanApplication.client.id}">
+                                    ${loanContract.loanApplication.client.secondName} ${loanContract.loanApplication.client.firstName} ${loanContract.loanApplication.client.patronymic}
                                 </a>
                             </td>
-                            <td>${loanApplication.desiredLoan}</td>
+                            <td>${loanContract.loanApplication.desiredLoan}</td>
+                            <td>${loanContract.approvedLoanAmount}</td>
+                            <td>${loanContract.approvedTimeToPay}</td>
                             <td>
-                                <#if loanApplication.loanApplicationStatus == "MOT_CONSIDERED">
-                                    Рассматривается
-                                <#elseif loanApplication.loanApplicationStatus == "APPROVED">
-                                    Одобрено
-                                <#elseif loanApplication.loanApplicationStatus == "NOT_APPROVED">
-                                    Не одобрено
+                                <#if loanContract.loanContractStatus == "SIGNED">
+                                    Подписан
+                                <#elseif loanContract.loanContractStatus == "NOT_SIGNED">
+                                    Не подписан
                                 </#if>
                             </td>
                             <td>
-                                <a href="/loanApplication/${loanApplication.id}">Подробнее</a>
+                                <a href="/loan-contracts/${loanContract.id}">Подробнее</a>
                             </td>
                         </tr>
                     </#list>

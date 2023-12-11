@@ -17,17 +17,23 @@ import java.util.Date;
 public class LoanContractEntity {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "contract_status")
     @Enumerated(EnumType.STRING)
-    private LoanContractStatus loanContractStatus;
+    private LoanContractStatus loanContractStatus = LoanContractStatus.NOT_SIGNED;
 
     @Column(name = "signing_date")
     private Date signingDate;
 
+    @Column(name = "approved_loan_amount")
+    private long approvedLoanAmount;
+
+    @Column(name = "approved_time_to_pay")
+    private int approvedTimeToPay;
+
     @OneToOne
-    @JoinColumn(name = "loan_application_id", unique = true)
+    @JoinColumn(name = "loan_application_id")
     private LoanApplicationEntity loanApplication;
 }

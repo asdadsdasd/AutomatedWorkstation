@@ -15,21 +15,21 @@
             <h2 class="mb-1 text-center">Оформление заявки на кредит</h2>
             <hr class="hr mb-4">
             <h5 class="mb-3">Паспортные данные</h5>
-            <form>
+            <form action="/loan-application-create-form/create" method="post">
                 <div class="row mb-2">
                     <div class="col">
                         <label class="form-label">Фамилия</label>
-                        <input type="text" class="form-control" placeholder="Фамилия">
+                        <input type="text" class="form-control" placeholder="Фамилия" name="secondName" required>
                     </div>
                     <div class="col">
                         <label class="form-label">Имя</label>
-                        <input type="text" class="form-control" placeholder="Имя">
+                        <input type="text" class="form-control" placeholder="Имя" name="firstName" required>
                     </div>
                 </div>
                 <div class="row mb-2">
                     <div class="col">
                         <label class="form-label">Отчество</label>
-                        <input type="text" class="form-control" placeholder="Отчество">
+                        <input type="text" class="form-control" placeholder="Отчество" name="patronymic">
                     </div>
                     <div class="col">
                         <label class="form-label">Семейное положение</label>
@@ -51,57 +51,53 @@
                 <div class="row mb-2">
                     <div class="col">
                         <label class="form-label">Серия паспорта</label>
-                        <input type="text" class="form-control" placeholder="0000">
+                        <input type="text" class="form-control" placeholder="0000" name="passportSerial" required>
                     </div>
                     <div class="col">
                         <label class="form-label">Номер паспорта</label>
-                        <input type="text" class="form-control" placeholder="000000">
+                        <input type="text" class="form-control" placeholder="000000" name="passportNumber" required>
                     </div>
                 </div>
                 <div class="row mb-2">
                     <div class="col">
                         <label class="form-label">Адрес прописки</label>
-                        <input type="text" class="form-control" placeholder="г.Город ул.Улица д.Дом кв.Квартира">
+                        <input type="text" class="form-control" placeholder="г.Город ул.Улица д.Дом кв.Квартира" name="registrationAddress" required>
                     </div>
                 </div>
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <label class="form-label">Номер телефона</label>
-                        <input type="text" class="form-control" placeholder="79876543210">
+                        <input type="text" class="form-control" placeholder="79876543210" name="phoneNumber" required>
                     </div>
                 </div>
                 <hr class="hr mb-4">
-            </form>
-            <h5 class="mb-3">Сведения о занятости</h5>
-            <form>
-                <div class="row mb-2">
-                    <div class="col-5">
-                        <label class="form-label">Должности</label>
-                        <input type="text" class="form-control" placeholder="Должность">
+                <h5 class="mb-3">Сведения о занятости</h5>
+                    <div class="row mb-2">
+                        <div class="col-5">
+                            <label class="form-label">Должность</label>
+                            <input type="text" class="form-control" placeholder="Должность" name="post" required>
+                        </div>
+                        <div class="col-5">
+                            <label class="form-label">Название организации</label>
+                            <input type="text" class="form-control" placeholder="ООО КОМПАНИ" name="organisationName" required>
+                        </div>
+                        <div class="col-2">
+                            <label class="form-label">Период работы</label>
+                            <input type="number" class="form-control" placeholder="14" name="workPeriod" required>
+                        </div>
                     </div>
-                    <div class="col-5">
-                        <label class="form-label">Название организации</label>
-                        <input type="text" class="form-control" placeholder="ООО КОМПАНИ">
-                    </div>
-                    <div class="col-2">
-                        <label class="form-label">Период работы</label>
-                        <input type="number" class="form-control" placeholder="14">
-                    </div>
-                </div>
-                <hr class="hr mb-4">
-            </form>
-            <h5 class="mb-3">Запрашиваемая сумма кредита</h5>
-            <form>
+                    <hr class="hr mb-4">
+                <h5 class="mb-3">Запрашиваемая сумма кредита</h5>
                 <div class="row mb-2">
                     <div class="col-4">
                         <label class="form-label">Сумма</label>
-                        <input type="text" class="form-control" placeholder="15000">
+                        <input type="number" class="form-control" placeholder="15000" name="desiredLoan" required>
                     </div>
                 </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Отправить форму</button>
+                </div>
             </form>
-            <div class="text-center mt-3">
-                <button type="submit" class="btn btn-primary">Отправить форму</button>
-            </div>
         </div>
     </div>
 </div>

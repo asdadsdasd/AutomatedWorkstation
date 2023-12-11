@@ -8,7 +8,9 @@ import ru.kozarez.automated_workstation.entities.enums.MartialStatus;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -48,5 +50,5 @@ public class ClientEntity {
     private String phoneNumber;
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<EmploymentEntity> employments = new HashSet<>();
+    private List<EmploymentEntity> employments;
 }

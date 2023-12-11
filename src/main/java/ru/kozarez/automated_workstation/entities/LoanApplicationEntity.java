@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class LoanApplicationEntity {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @OneToOne(mappedBy = "loanApplication", cascade = CascadeType.ALL)
@@ -31,5 +31,5 @@ public class LoanApplicationEntity {
 
     @Column(name = "loan_status")
     @Enumerated(EnumType.STRING)
-    private LoanApplicationStatus loanApplicationStatus = LoanApplicationStatus.MOT_CONSIDERED;
+    private LoanApplicationStatus loanApplicationStatus = LoanApplicationStatus.NOT_CONSIDERED;
 }
