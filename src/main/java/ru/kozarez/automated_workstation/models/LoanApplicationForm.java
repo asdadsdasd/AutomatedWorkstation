@@ -13,52 +13,17 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class LoanApplicationForm {
-    /*@NotEmpty
-    @Size(min = 2, max = 30)*/
     private String secondName;
-
-    /*@NotEmpty
-    @Size(min = 2, max = 30)*/
     private String firstName;
-
-    /*@Size(min = 2, max = 30)*/
     private String patronymic;
-
-    /*@NotEmpty
-    @Size(min = 4, max = 4)*/
     private String passportSerial;
-
-    /*@NotEmpty
-    @Size(min = 6, max = 6)*/
     private String passportNumber;
-
-    /*@NotEmpty*/
     private MartialStatus martialStatus;
-
-   /* @NotEmpty
-    @Size(min = 4, max = 200)*/
     private String registrationAddress;
-
-    /*@NotEmpty
-    @Size(min = 9, max = 15)*/
     private String phoneNumber;
-
-   /* @NotEmpty
-    @Min(value = 0)
-    @Max(value = 900)*/
     private int workPeriod;
-
-    /*@NotEmpty
-    @Size(min = 2, max = 80)*/
     private String post;
-
-    /*@NotEmpty
-    @Size(min = 2, max = 80)*/
     private String organisationName;
-
-    /*@NotEmpty
-    @Min(value = 10000)
-    @Max(value = 50000000)*/
     private int desiredLoan;
 
     public ClientEntity parseClientEntity(){

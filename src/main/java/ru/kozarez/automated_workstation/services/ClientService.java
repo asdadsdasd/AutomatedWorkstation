@@ -8,6 +8,7 @@ import ru.kozarez.automated_workstation.dao.EmploymentDAOImplementation;
 import ru.kozarez.automated_workstation.entities.ClientEntity;
 import ru.kozarez.automated_workstation.entities.EmploymentEntity;
 import ru.kozarez.automated_workstation.entities.LoanApplicationEntity;
+import ru.kozarez.automated_workstation.models.ClientFilterForm;
 import ru.kozarez.automated_workstation.models.LoanApplicationForm;
 
 import java.util.List;
@@ -42,5 +43,10 @@ public class ClientService {
     @Transactional
     public void delete(ClientEntity clientEntity){
         clientDAO.delete(clientEntity);
+    }
+
+    @Transactional
+    public List<ClientEntity> getClientsByFilter(ClientFilterForm clientFilterForm){
+        return clientDAO.getByFilter(clientFilterForm);
     }
 }
