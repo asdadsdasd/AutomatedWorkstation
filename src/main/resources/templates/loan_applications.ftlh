@@ -12,20 +12,22 @@
             <hr class="hr mb-4">
             <h5 class="mb-3">Фильтр</h5>
             <label class="form-label">Статус одобрения</label>
-            <select name="loanApplicationStatus" class="form-select col-3" required>
-                <#list statuses as status>
-                    <#if status == 'MOT_CONSIDERED'>
-                        <option value="${status}">Рассматривается</option>
-                    <#elseif status == 'APPROVED'>
-                        <option value="${status}">Одобрено</option>
-                    <#elseif status == 'NOT_APPROVED'>
-                        <option value="${status}">Не одобрено</option>
-                    </#if>
-                </#list>
-            </select>
-            <div class="text-center mt-3">
-                <button type="submit" class="btn btn-primary">Поиск</button>
-            </div>
+            <form action="/loan-applications/filtered" method="get">
+                <select name="loanApplicationStatus" class="form-select col-3" required>
+                    <#list statuses as status>
+                        <#if status == 'MOT_CONSIDERED'>
+                            <option value="${status}">Рассматривается</option>
+                        <#elseif status == 'APPROVED'>
+                            <option value="${status}">Одобрено</option>
+                        <#elseif status == 'NOT_APPROVED'>
+                            <option value="${status}">Не одобрено</option>
+                        </#if>
+                    </#list>
+                </select>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Поиск</button>
+                </div>
+            </form>
             <div class="table-responsive mt-5">
                 <table class="table text-center">
                     <thead>

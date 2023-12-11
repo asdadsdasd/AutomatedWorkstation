@@ -126,4 +126,20 @@ public class LoanController {
         model.addAttribute("employments", employments);
         return "loan_contract";
     }
+
+    @GetMapping("/loan-applications/filtered")
+    public String getLoanApplicationsByFilter(@RequestParam(value = "loanApplicationStatus") String loanApplicationStatus, Model model){
+        List<LoanApplicationEntity> loanApplications = loanApplicationService.getByLoanApplicationStatus(loanApplicationStatus);
+        model.addAttribute("loanApplications", loanApplications);
+        model.addAttribute("statuses", LoanApplicationStatus.values());
+        return "loan_applications";
+    }
+
+    @GetMapping("/loan-contracts/filtered")
+    public String getLoanContractsByFilter(@RequestParam(value = "loanContractStatus") String loanContractStatus, Model model){
+        List<LoanContractEntity> loanContracts = loanContractService.getByLoanContractStatus(loanContractStatus);
+        model.addAttribute("loanContracts", loanContracts);
+        model.addAttribute("statuses", LoanContractStatus.values());
+        return "loan_contracts";
+    }
 }

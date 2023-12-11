@@ -42,14 +42,8 @@ public class ClientController {
 
     @GetMapping("/clients/filtered")
     public String getClientsByFilter(ClientFilterForm clientFilterForm, Model model){
-
-        // Используйте сервис для обработки запросов к базе данных
         List<ClientEntity> filteredClients = clientService.getClientsByFilter(clientFilterForm);
-
-        // Передайте полученные данные на страницу через объект Model
         model.addAttribute("clients", filteredClients);
-
-        // Верните имя представления (например, имя шаблона Thymeleaf или FreeMarker)
-        return "clients"; // Название шаблона, куда нужно вывести результаты фильтрации
+        return "clients";
     }
 }

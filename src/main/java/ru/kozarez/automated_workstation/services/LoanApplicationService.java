@@ -116,32 +116,11 @@ public class LoanApplicationService {
         loanApplicationDAO.delete(loanApplication);
     }
 
-    /*@Transactional
-    public void createLoanApplication(LoanApplicationForm form) {
-        EmploymentEntity employment = new EmploymentEntity();
-        ClientEntity client = new ClientEntity();
-        LoanApplicationEntity loanApplication = new LoanApplicationEntity();
-
-        employment.setClient(client);
-        employment.setPost(form.getPost());
-        employment.setWorkPeriod(form.getWorkPeriod());
-        employment.setOrganisationName(form.getOrganisationName());
-
-        client.setSecondName(form.getSecondName());
-        client.setFirstName(form.getFirstName());
-        client.setPatronymic(form.getPatronymic());
-        client.setPassportSerial(form.getPassportSerial());
-        client.setPassportNumber(form.getPassportNumber());
-        client.setMartialStatus(form.getMartialStatus());
-        client.setPhoneNumber(form.getPhoneNumber());
-        client.setRegistrationAddress(form.getRegistrationAddress());
-
-        loanApplication.setDesiredLoan(form.getDesiredLoan());
-        loanApplication.setClient(client);
-        loanApplication.setLoanApplicationStatus(LoanApplicationStatus.APPROVED);
-
-        clientDAO.create(client);
-        loanApplicationDAO.create(loanApplication);
-        employmentDAO.create(employment);
-    }*/
+    @Transactional
+    public List<LoanApplicationEntity> getByLoanApplicationStatus(String status){
+        if(status.equals("APPROVED")){
+            return loanApplicationDAO.getByLoanApplicationStatus(LoanApplicationStatus.APPROVED);
+        }
+        return loanApplicationDAO.getByLoanApplicationStatus(LoanApplicationStatus.NOT_APPROVED);
+    }
 }

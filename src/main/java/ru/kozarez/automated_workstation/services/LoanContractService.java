@@ -7,6 +7,7 @@ import ru.kozarez.automated_workstation.dao.LoanApplicationDAOImplementation;
 import ru.kozarez.automated_workstation.dao.LoanContractDAOImplementation;
 import ru.kozarez.automated_workstation.entities.LoanApplicationEntity;
 import ru.kozarez.automated_workstation.entities.LoanContractEntity;
+import ru.kozarez.automated_workstation.entities.enums.LoanApplicationStatus;
 import ru.kozarez.automated_workstation.entities.enums.LoanContractStatus;
 
 import java.util.Date;
@@ -51,5 +52,13 @@ public class LoanContractService {
         }
         loanContract.setSigningDate(new Date(System.currentTimeMillis()));
         loanContractDAO.update(loanContract);
+    }
+
+    @Transactional
+    public List<LoanContractEntity> getByLoanContractStatus(String status){
+        if(status.equals("SIGNED")){
+            return loanContractDAO.getByLoanContractStatus(LoanContractStatus.SIGNED);
+        }
+        return loanContractDAO.getByLoanContractStatus(LoanContractStatus.NOT_SIGNED);
     }
 }

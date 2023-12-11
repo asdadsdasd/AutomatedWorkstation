@@ -12,18 +12,20 @@
             <hr class="hr mb-4">
             <h5 class="mb-3">Фильтр</h5>
             <label class="form-label">Статус подписания</label>
-            <select name="loanContractStatus" class="form-select col-3" required>
-                <#list statuses as status>
-                    <#if status == 'SIGNED'>
-                        <option value="${status}">Подписан</option>
-                    <#elseif status == 'NOT_SIGNED'>
-                        <option value="${status}">Не подписан</option>
-                    </#if>
-                </#list>
-            </select>
-            <div class="text-center mt-3">
-                <button type="submit" class="btn btn-primary">Поиск</button>
-            </div>
+            <form action="/loan-contracts/filtered" method="get">
+                <select name="loanContractStatus" class="form-select col-3" required>
+                    <#list statuses as status>
+                        <#if status == 'SIGNED'>
+                            <option value="${status}">Подписан</option>
+                        <#elseif status == 'NOT_SIGNED'>
+                            <option value="${status}">Не подписан</option>
+                        </#if>
+                    </#list>
+                </select>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Поиск</button>
+                </div>
+            </form>
             <div class="table-responsive mt-5">
                 <table class="table text-center">
                     <thead>
