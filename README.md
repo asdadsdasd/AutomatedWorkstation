@@ -84,11 +84,11 @@
 ![8](https://github.com/asdadsdasd/AutomatedWorkstation/assets/90198612/6309776b-9724-4953-ba52-72175ff7f5c4)
 
 
-### **Инофрмация об отправленной заявке**
+### **Информация об отправленной заявке**
 
 ![11](https://github.com/asdadsdasd/AutomatedWorkstation/assets/90198612/f8da915f-d218-4375-887f-214453ab1a67)
 
 
-### **Инофрмация о составленном кредитном договоре**
+### **Информация о составленном кредитном договоре**
 
 ![12](https://github.com/asdadsdasd/AutomatedWorkstation/assets/90198612/34c0e1f4-5abe-441d-8dcd-764d01209606)
