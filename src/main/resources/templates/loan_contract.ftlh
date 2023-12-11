@@ -92,7 +92,7 @@
                 <div class="row mb-2">
                     <div class="col-4">
                         <label class="form-label">Одобренная сумма</label>
-                        <p class="form-control">${loanContract.getApprovedLoan}</p>
+                        <p class="form-control">${loanContract.getApprovedLoan()}</p>
                     </div>
                     <div class="col-4">
                         <label class="form-label">Одобренное время на выплату</label>
