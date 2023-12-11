@@ -1,13 +1,10 @@
 package ru.kozarez.automated_workstation.services;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.kozarez.automated_workstation.dao.*;
 import ru.kozarez.automated_workstation.entities.ClientEntity;
-import ru.kozarez.automated_workstation.entities.EmploymentEntity;
 import ru.kozarez.automated_workstation.entities.LoanApplicationEntity;
 import ru.kozarez.automated_workstation.entities.LoanContractEntity;
 import ru.kozarez.automated_workstation.entities.enums.LoanApplicationStatus;
@@ -59,10 +56,8 @@ public class LoanApplicationService {
         } else {
             client = clientByPassport.get(0);
             client = form.parseClientEntity();
-
             clientDAO.update(client);
         }
-
         employmentDAO.create(form.parseEmployment(clientDAO.getById(client.getId())));
         LoanApplicationEntity loanApplication = form.parseLoanApplication(client);
         loanApplicationDAO.create(loanApplication);
@@ -92,7 +87,7 @@ public class LoanApplicationService {
 
             LoanContractEntity loanContract = new LoanContractEntity();
 
-            loanContract.setApprovedLoanAmount(amountValue);
+            loanContract.setApprovedLoan(amountValue);
             loanContract.setApprovedTimeToPay(termValue);
             loanContract.setLoanApplication(loanApplication);
 

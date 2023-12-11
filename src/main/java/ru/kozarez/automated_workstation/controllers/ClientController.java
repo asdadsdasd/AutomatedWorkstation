@@ -1,17 +1,12 @@
 package ru.kozarez.automated_workstation.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import ru.kozarez.automated_workstation.entities.ClientEntity;
 import ru.kozarez.automated_workstation.entities.EmploymentEntity;
-import ru.kozarez.automated_workstation.entities.enums.MartialStatus;
 import ru.kozarez.automated_workstation.models.ClientFilterForm;
 import ru.kozarez.automated_workstation.services.ClientService;
 import ru.kozarez.automated_workstation.services.EmploymentService;

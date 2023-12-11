@@ -1,6 +1,5 @@
 package ru.kozarez.automated_workstation.entities;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +8,7 @@ import ru.kozarez.automated_workstation.entities.enums.LoanApplicationStatus;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "loan_application")
+@Table(name = "loan_applications")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,7 +26,7 @@ public class LoanApplicationEntity {
     private ClientEntity client;
 
     @Column(name = "desired_loan")
-    private int desiredLoan;
+    private long desiredLoan;
 
     @Column(name = "loan_status")
     @Enumerated(EnumType.STRING)

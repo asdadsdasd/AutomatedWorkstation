@@ -6,10 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.kozarez.automated_workstation.dao.ClientDAOImplementation;
 import ru.kozarez.automated_workstation.dao.EmploymentDAOImplementation;
 import ru.kozarez.automated_workstation.entities.ClientEntity;
-import ru.kozarez.automated_workstation.entities.EmploymentEntity;
-import ru.kozarez.automated_workstation.entities.LoanApplicationEntity;
 import ru.kozarez.automated_workstation.models.ClientFilterForm;
-import ru.kozarez.automated_workstation.models.LoanApplicationForm;
 
 import java.util.List;
 

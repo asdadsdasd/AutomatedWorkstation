@@ -1,13 +1,9 @@
 package ru.kozarez.automated_workstation.dao;
 
-import org.hibernate.query.Query;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import ru.kozarez.automated_workstation.entities.ClientEntity;
 import ru.kozarez.automated_workstation.entities.EmploymentEntity;
 
 import java.util.List;
-import java.util.Queue;
 
 @Repository
 public class EmploymentDAOImplementation extends GenericDAOImplementation<EmploymentEntity, Long>{

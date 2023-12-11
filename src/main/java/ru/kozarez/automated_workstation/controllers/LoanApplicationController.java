@@ -11,7 +11,6 @@ import ru.kozarez.automated_workstation.entities.LoanApplicationEntity;
 import ru.kozarez.automated_workstation.entities.enums.LoanApplicationStatus;
 import ru.kozarez.automated_workstation.services.EmploymentService;
 import ru.kozarez.automated_workstation.services.LoanApplicationService;
-import ru.kozarez.automated_workstation.services.LoanContractService;
 
 import java.util.List;
 

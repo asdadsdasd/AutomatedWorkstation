@@ -1,6 +1,5 @@
 package ru.kozarez.automated_workstation.entities;
 
-
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +9,7 @@ import ru.kozarez.automated_workstation.entities.enums.LoanContractStatus;
 import java.util.Date;
 
 @Entity
-@Table(name = "loan_contract")
+@Table(name = "loan_contracts")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,8 +26,8 @@ public class LoanContractEntity {
     @Column(name = "signing_date")
     private Date signingDate;
 
-    @Column(name = "approved_loan_amount")
-    private long approvedLoanAmount;
+    @Column(name = "approved_loan")
+    private long approvedLoan;
 
     @Column(name = "approved_time_to_pay")
     private int approvedTimeToPay;

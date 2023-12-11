@@ -19,8 +19,6 @@ public class LoanProcessController {
 
     private final LoanContractService loanContractService;
 
-    private final EmploymentService employmentService;
-
     private LoanApplicationEntity loanApplicationEntity = null;
 
     private LoanContractEntity loanContractEntity = null;
@@ -42,7 +40,6 @@ public class LoanProcessController {
     public String createLoanApplicationForm(@ModelAttribute("loanApplicationForm") LoanApplicationForm loanApplicationForm) {
         this.loanApplicationForm = loanApplicationForm;
         loanApplicationEntity = loanApplicationService.createWithForm(loanApplicationForm);
-        //loanApplicationService.createLoanApplication(loanApplicationForm);
         return "redirect:/loan-application-create-form/decision";
     }
 

@@ -6,9 +6,7 @@ import ru.kozarez.automated_workstation.entities.ClientEntity;
 import ru.kozarez.automated_workstation.entities.EmploymentEntity;
 import ru.kozarez.automated_workstation.entities.LoanApplicationEntity;
 import ru.kozarez.automated_workstation.entities.enums.MartialStatus;
-
 import java.util.Arrays;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -24,7 +22,7 @@ public class LoanApplicationForm {
     private int workPeriod;
     private String post;
     private String organisationName;
-    private int desiredLoan;
+    private long desiredLoan;
 
     public ClientEntity parseClientEntity(){
         ClientEntity client = new ClientEntity();

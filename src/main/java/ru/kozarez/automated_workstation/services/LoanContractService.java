@@ -3,11 +3,8 @@ package ru.kozarez.automated_workstation.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.kozarez.automated_workstation.dao.LoanApplicationDAOImplementation;
 import ru.kozarez.automated_workstation.dao.LoanContractDAOImplementation;
-import ru.kozarez.automated_workstation.entities.LoanApplicationEntity;
 import ru.kozarez.automated_workstation.entities.LoanContractEntity;
-import ru.kozarez.automated_workstation.entities.enums.LoanApplicationStatus;
 import ru.kozarez.automated_workstation.entities.enums.LoanContractStatus;
 
 import java.util.Date;

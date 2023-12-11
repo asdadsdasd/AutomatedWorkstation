@@ -49,7 +49,7 @@
                                 </a>
                             </td>
                             <td>${loanContract.loanApplication.desiredLoan}</td>
-                            <td>${loanContract.approvedLoanAmount}</td>
+                            <td>${loanContract.getApprovedLoan()}</td>
                             <td>${loanContract.approvedTimeToPay}</td>
                             <td>
                                 <#if loanContract.loanContractStatus == "SIGNED">

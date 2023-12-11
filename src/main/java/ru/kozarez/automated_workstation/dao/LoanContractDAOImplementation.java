@@ -2,10 +2,7 @@ package ru.kozarez.automated_workstation.dao;
 
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
-import ru.kozarez.automated_workstation.entities.ClientEntity;
-import ru.kozarez.automated_workstation.entities.LoanApplicationEntity;
 import ru.kozarez.automated_workstation.entities.LoanContractEntity;
-import ru.kozarez.automated_workstation.entities.enums.LoanApplicationStatus;
 import ru.kozarez.automated_workstation.entities.enums.LoanContractStatus;
 
 import java.util.List;
